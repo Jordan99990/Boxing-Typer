@@ -1,11 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Demo : MonoBehaviour
 {
     public Transform entityTransform;
     public Animator entityAnimator;
+    public GameObject pauseMenuUI;
+    private bool isPaused;
+
+    void Start()
+    {
+        Time.timeScale = 1f;
+        pauseMenuUI.SetActive(false);
+        isPaused = false;
+    }
 
     public void TranslateX(int x)
     {
@@ -64,8 +76,42 @@ public class Demo : MonoBehaviour
         entityAnimator.SetTrigger("PunchTrigger");
     }
 
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+    }
+
+    void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
     }
 }
