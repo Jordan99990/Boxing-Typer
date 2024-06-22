@@ -1,3 +1,3 @@
 Demo
 
-[![Demo](Demo.mp4)](Demo.mp4)
+[Click here to watch the demo](https://rawcdn.githack.com/Jordan99990/Boxing-Typer/main/Demo.mp4)
