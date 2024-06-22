@@ -1,3 +1,4 @@
-Demo
 
-[Click here to watch the demo](https://rawcdn.githack.com/Jordan99990/Boxing-Typer/main/Demo.mp4)
+
+https://github.com/Jordan99990/Boxing-Typer/assets/104220884/2d437b43-c0ea-4490-8964-6b559d1cfe28
+
